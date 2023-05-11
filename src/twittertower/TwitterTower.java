@@ -46,7 +46,7 @@ public class TwitterTower {
                 if (k >= width) {
                     break;
                 }
-                cnt = (int) (width/2  - i);
+                cnt = (int) ((width-k)/2);
                 while(cnt>0){
                   System.out.print(" ");
                   cnt--;
