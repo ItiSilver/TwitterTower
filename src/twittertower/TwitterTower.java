@@ -18,18 +18,18 @@ public class TwitterTower {
     }
 
     public static void printTriangle(double height, double width) {
-        int res = 0, cnt = (int)width;
+        int res = 0;
         int oddNums = (int) ((width - 2) / 2);
         double rows = (height - 2) / oddNums;
         if (rows % 10 != 0) {
             res = (int) ((height - 2) % oddNums);
         }
         rows = (int) (rows);
-        int k, j;
+        int k, j,cnt =(int)(width/2) ;
         while(cnt>0){
-            System.out.print(" ");
-            cnt--;
-        }
+          System.out.print(" ");
+          cnt--;
+      }
         System.out.println(" *");
         for (int i = 1; i < height - 1; i++) {
             if (res != 0 && i == 1) {
@@ -46,6 +46,11 @@ public class TwitterTower {
                 if (k >= width) {
                     break;
                 }
+                cnt = (int) (width/2  - i);
+                while(cnt>0){
+                  System.out.print(" ");
+                  cnt--;
+              }
                 for (; k > 0; k--) {
                     System.out.print("*");
                 }
@@ -108,7 +113,7 @@ public class TwitterTower {
                         case 2 -> {
                             if (width % 2 == 0 || width > height * 2) {
                                 System.out.println("Sorry, but the triangle cannot be printed");
-                            } //לבדוק האם צריך להיות גם אי זוגי וגם קצר או מספיק רק תנאי אחד
+                            }
                             else {
                                 printTriangle(height, width);
                             }
@@ -117,7 +122,7 @@ public class TwitterTower {
                     }
                 }
 
-                
+
             }
             System.out.println(" ");
         }
